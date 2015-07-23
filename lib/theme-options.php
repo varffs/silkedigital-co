@@ -103,13 +103,19 @@ class IGV_Admin {
 
 		// Set our CMB2 fields
 
-		$cmb->add_field( array(
-			'name' => __( 'Test Text', 'IGV' ),
-			'desc' => __( 'field description (optional)', 'IGV' ),
-			'id'   => $this->prefix . 'test_text',
-			'type' => 'text',
-			'default' => 'Default Text',
-		) );
+    $cmb->add_field( array(
+      'name' => 'Home about',
+      'desc' => '...',
+      'id' => $this->prefix . 'about',
+      'type' => 'wysiwyg'
+    ) );
+
+    $cmb->add_field( array(
+      'name' => 'Strapline',
+      'desc' => 'shows under logo on splash & ...',
+      'id' => $this->prefix . 'strapline',
+      'type' => 'text'
+    ) );
 
 		$cmb->add_field( array(
 			'name'    => __( 'Test Color Picker', 'IGV' ),

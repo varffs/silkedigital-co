@@ -1,24 +1,6 @@
 @import "sanitize"
 @import "helpers"
 
-// GRID OF 12 90px COLUMNS WITH 16px GUTTER
-$cols = 12
-$col = 90px
-$gutter = 16px
-.container
-  margin: 0 auto
-  width: ($col * $cols)+($gutter * $cols)
-.row
-  clear: both
-.col
-  float: left
-  margin-left: ($gutter/2)
-  margin-right: ($gutter/2)
-  box-sizing: content-box
-for col in 1..$cols
-  .col{col}
-    width: ( col * $col ) + ( ( col - 1 ) * $gutter )
-
 // FLUID COLS
 .percent-col
   float: left
@@ -30,17 +12,23 @@ for pcol in 1..$pcols
 
 // VARIABLES
 
+$gutter = 20px
 $margin-small = ($gutter)
 $margin-tiny = ($gutter / 2)
 $margin-basic = ($gutter * 2)
 $margin-large = ($gutter * 5)
 
-$font-size-basic = 15px
-$font-leading-basic = 1.35em
+$font-size-basic = 18px
+$font-leading-basic = 1.4em
+$font-leading-header = 1.5em
 $font-tracking-basic = 0.001em
+
+$width-max-copy = 650px
 
 $color-black-soft = rgb(14, 14, 14)
 $color-white-soft = rgb(253, 253, 253)
+
+$color-yellow = rgb(255, 255, 0)
 
 // TYPOGRAPHY
 
@@ -52,24 +40,55 @@ body
 
 h1
   font-size: 3em
+  line-height: $font-leading-header
+  margin-bottom: .5em
 
 h2
   font-size: 2em
+  line-height: $font-leading-header
+  margin-bottom: .5em
 
 h3
-  font-size: 1.5em
+  font-size: 1.3em
+  line-height: $font-leading-basic
+  margin-bottom: .8em
 
 p
-  margin-bottom: 1em
+  margin-bottom: .5em
+  max-width: $width-max-copy
+  a
+    border-bottom: 2px solid $color-yellow
+    &:hover
+      border-bottom-color: black
 
+.font-bold
+  font-weight: bold
+
+.font-large
+  font-size: 1.3em
+
+ul
+  font-size: 1.3em
+  line-height: 1.6
+  margin-left: 1em
+
+li
+  list-style: initial
 
 // LINKS
-
-a, a:active, a:visited
+a,a:active,a:visited
   color:inherit
-  transition:opacity .2s
+  text-decoration: none
+  color: black
+  transition:border 1s
+
+a:hover
+  color: black
+
+.link-underline
+  border-bottom: 2px solid $color-yellow
   &:hover
-    opacity:.5
+    border-bottom-color: black
 
 
 // BASIC
@@ -78,37 +97,82 @@ html
   background-color: $color-white-soft
   color: $color-black-soft
 
+.container
+  width: 65%
+  min-width: 310px
+  margin: 0 auto
+
 img
   max-width: 100%
   height: auto
 
-
-//the 100% widths are just so stylus can compile delete as desired
-
-// HEADER
-
-#header
+video
   width: 100%
 
-// POSTS LOOP
-#posts
-  width: 100%
+//.window
+//  min-height: 100vh
 
-.post
-  width: 100%
+.yellow-background
+  background-color: $color-yellow
 
-#pagination
-  width: 100%
+.center-text
+  max-width: $width-max-copy
+  margin: 20vh auto
 
+// HOME
 
-// FOOTER
+  // SPLASH
 
-#footer
-  width: 100%
+#splash
+  height: 90vh
+
+#splash-logo
+  svg
+    height: 30vh
+    width: auto
+
+  // MENU
+
+#menu
+  min-width: 310px
+  padding: $margin-small
+  min-height: 10vh
+
+// CONTACT
+
+#contact
+  padding-top: $margin-basic
+
+  // FORM
+
+form
+  padding-bottom: $margin-basic
+
+.form-field
+  margin-bottom: $margin-basic
+
+label, input, textarea
+  margin: $margin-small auto
+  min-width: 320px
+
+label
+  width: 70%
+  display: block
+  text-align: left
+
+input, textarea
+  width: 65%
+  background-color: $color-white-soft
+  display: block
+  padding: $margin-small
+  box-sizing: border-box
+
+input[type=submit]
+  width: auto
+  padding: $margin-small
+  background-color: $color-white-soft
 
 
 // MEDIA QUERIES
 
-@media screen and (max-width: ($col * $cols)+($gutter * $cols))
-  html
-    width: 100%
+// @media screen and (max-width: ($col * $cols)+($gutter * $cols))
