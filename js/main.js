@@ -8,5 +8,11 @@ function l(data) {
 
 jQuery(document).ready(function () {
   'use strict';
-  l('Hola Globie');
+
+  $('.js-scroll-to-trigger').on('click', function(e) {
+    e.preventDefault();
+    var target = $(this).data('target');
+    $('#' + target).ScrollTo();
+  })
+
 });
