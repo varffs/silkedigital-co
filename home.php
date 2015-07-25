@@ -2,7 +2,7 @@
 get_header();
 ?>
 
-<section id="splash" class="yellow-background">
+<section id="splash" class="yellow-background js-scroll-to-trigger u-pointer" data-target="us">
   <div class="u-holder u-align-center">
     <div class="u-held">
       <div class="center-text">
@@ -25,9 +25,9 @@ get_header();
 <main id="main-content">
 
   <div id="us" class="window">
-    <div class="u-holder u-align-center">
+    <div class="u-holder u-align-center center-spaced">
       <div class="u-held">
-        <div class="center-text u-align-left">
+        <div id="us-copy" class="center-text u-align-left">
           <?php
             $about = IGV_get_option('_igv_about');
             if (!empty($about)) {
@@ -61,10 +61,12 @@ get_header();
           ?>
         </video>
       </div>
-      <div class="u-holder u-align-center">
+      <div class="u-holder u-align-center center-spaced">
         <div class="u-held">
           <div class="center-text u-align-left">
-            <h2><?php the_title(); ?></h2>
+            <h2>
+              <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+            </h2>
             <div>
               <?php
                 if (!empty($meta['_igv_home_excerpt'][0])) {
@@ -72,6 +74,45 @@ get_header();
                 }
               ?>
             </div>
+          </div>
+
+          <div class="home-key-facts container">
+          <?php
+            $key_facts = get_post_meta($post->ID, '_igv_key_fact');
+            if ($key_facts) {
+              if (count($key_facts[0]) >= 2) {
+          ?>
+            <div class="percent-col into-3">
+              <div class="home-key-fact">
+                <?php echo $key_facts[0][0]; ?>
+              </div>
+            </div>
+            <div class="percent-col into-3 u-align-center">
+              <div class="home-key-fact">
+                <?php echo $key_facts[0][1]; ?>
+              </div>
+            </div>
+            <div class="percent-col into-3 u-align-center">
+              <a href="<?php the_permalink(); ?>">
+                <div class="home-key-fact find-out-more">
+                  find out more
+                </div>
+              </a>
+            </div>
+          <?php
+              }
+            } else {
+          ?>
+            <div class="find-out-more-solo u-align-center">
+              <a href="<?php the_permalink(); ?>">
+                <div class="home-key-fact find-out-more">
+                  find out more
+                </div>
+              </a>
+            </div>
+          <?php
+            }
+          ?>
           </div>
         </div>
       </div>

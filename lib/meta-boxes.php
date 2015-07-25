@@ -87,5 +87,17 @@ function igv_cmb_metaboxes() {
     // 'repeatable'      => true,
   ) );
 
+  $project_meta->add_field( array(
+    'name'       => __( 'Key facts', 'cmb2' ),
+    'desc'       => __( '...', 'cmb2' ),
+    'id'         => $prefix . 'key_fact',
+    'type'       => 'text',
+    // 'show_on_cb' => 'yourprefix_hide_if_no_cats', // function should return a bool value
+    // 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
+    // 'escape_cb'       => 'my_custom_escaping',  // custom escaping callback parameter
+    // 'on_front'        => false, // Optionally designate a field to wp-admin only
+    'repeatable'      => true,
+  ) );
+
 }
 ?>
