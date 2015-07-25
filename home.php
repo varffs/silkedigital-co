@@ -24,7 +24,7 @@ get_header();
 
 <main id="main-content">
 
-  <div id="us" class="window">
+  <div id="us">
     <div class="u-holder u-align-center center-spaced">
       <div class="u-held">
         <div id="us-copy" class="center-text u-align-left">

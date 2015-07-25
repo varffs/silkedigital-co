@@ -56,11 +56,6 @@ function igv_cmb_metaboxes() {
     'desc'       => __( 'webm file for main video (optional)', 'cmb2' ),
     'id'         => $prefix . 'video_webm',
     'type'       => 'file',
-    // 'show_on_cb' => 'yourprefix_hide_if_no_cats', // function should return a bool value
-    // 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
-    // 'escape_cb'       => 'my_custom_escaping',  // custom escaping callback parameter
-    // 'on_front'        => false, // Optionally designate a field to wp-admin only
-    // 'repeatable'      => true,
   ) );
 
   $project_meta->add_field( array(
@@ -68,11 +63,6 @@ function igv_cmb_metaboxes() {
     'desc'       => __( 'mp4 file for main video (optional)', 'cmb2' ),
     'id'         => $prefix . 'video_mp4',
     'type'       => 'file',
-    // 'show_on_cb' => 'yourprefix_hide_if_no_cats', // function should return a bool value
-    // 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
-    // 'escape_cb'       => 'my_custom_escaping',  // custom escaping callback parameter
-    // 'on_front'        => false, // Optionally designate a field to wp-admin only
-    // 'repeatable'      => true,
   ) );
 
   $project_meta->add_field( array(
@@ -80,11 +70,6 @@ function igv_cmb_metaboxes() {
     'desc'       => __( 'Text to show on home', 'cmb2' ),
     'id'         => $prefix . 'home_excerpt',
     'type'       => 'wysiwyg',
-    // 'show_on_cb' => 'yourprefix_hide_if_no_cats', // function should return a bool value
-    // 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
-    // 'escape_cb'       => 'my_custom_escaping',  // custom escaping callback parameter
-    // 'on_front'        => false, // Optionally designate a field to wp-admin only
-    // 'repeatable'      => true,
   ) );
 
   $project_meta->add_field( array(
@@ -92,12 +77,49 @@ function igv_cmb_metaboxes() {
     'desc'       => __( '...', 'cmb2' ),
     'id'         => $prefix . 'key_fact',
     'type'       => 'text',
-    // 'show_on_cb' => 'yourprefix_hide_if_no_cats', // function should return a bool value
-    // 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
-    // 'escape_cb'       => 'my_custom_escaping',  // custom escaping callback parameter
-    // 'on_front'        => false, // Optionally designate a field to wp-admin only
     'repeatable'      => true,
   ) );
 
+  $project_meta->add_field( array(
+    'name'       => __( 'Video 2 webm', 'cmb2' ),
+    'desc'       => __( 'webm file for 2nd video (optional)', 'cmb2' ),
+    'id'         => $prefix . 'video_webm_2',
+    'type'       => 'file',
+  ) );
+
+  $project_meta->add_field( array(
+    'name'       => __( 'Video 2 mp4', 'cmb2' ),
+    'desc'       => __( 'mp4 file for 2nd video (optional)', 'cmb2' ),
+    'id'         => $prefix . 'video_mp4_2',
+    'type'       => 'file',
+  ) );
+
+  $project_meta->add_field( array(
+    'name'       => __( '2nd copy block', 'cmb2' ),
+    'desc'       => __( 'Text to show 2nd on single project (optional)', 'cmb2' ),
+    'id'         => $prefix . 'copy_2',
+    'type'       => 'wysiwyg',
+  ) );
+
+  $project_meta->add_field( array(
+    'name'       => __( 'Video 2 webm', 'cmb2' ),
+    'desc'       => __( 'webm file for 3rd video (optional)', 'cmb2' ),
+    'id'         => $prefix . 'video_webm_3',
+    'type'       => 'file',
+  ) );
+
+  $project_meta->add_field( array(
+    'name'       => __( 'Video 2 mp4', 'cmb2' ),
+    'desc'       => __( 'mp4 file for 3rd video (optional)', 'cmb2' ),
+    'id'         => $prefix . 'video_mp4_3',
+    'type'       => 'file',
+  ) );
+
+  $project_meta->add_field( array(
+    'name'       => __( '2nd copy block', 'cmb2' ),
+    'desc'       => __( 'Text to show 3nd on single project (optional)', 'cmb2' ),
+    'id'         => $prefix . 'copy_3',
+    'type'       => 'wysiwyg',
+  ) );
 }
 ?>
