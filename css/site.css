@@ -757,13 +757,19 @@ h3 {
 }
 p {
   margin-bottom: 0.5em;
-  max-width: 650px;
+  max-width: 680px;
 }
 p a {
   border-bottom: 2px solid #ff0;
 }
 p a:hover {
   border-bottom-color: #000;
+}
+blockquote {
+  font-style: italic;
+  font-size: 1.2em;
+  line-height: 1.5em;
+  margin: 40px;
 }
 .font-bold {
   font-weight: bold;
@@ -804,9 +810,11 @@ html {
 .container {
   width: 65%;
   min-width: 310px;
+  max-width: 1100px;
   margin: 0 auto;
 }
-img {
+img,
+svg {
   max-width: 100%;
   height: auto;
 }
@@ -816,21 +824,75 @@ video {
 .yellow-background {
   background-color: #ff0;
 }
+.center-spaced {
+  padding-top: 20vh;
+  padding-bottom: 20vh;
+}
 .center-text {
-  max-width: 650px;
-  margin: 20vh auto;
+  max-width: 680px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 40px;
 }
 #splash {
-  height: 90vh;
+  height: 99vh;
 }
 #splash-logo svg {
   height: 30vh;
   width: auto;
 }
+#menu-holder {
+  width: 100%;
+  top: 0;
+  z-index: 999;
+  border-bottom: 2px solid #fdfdfd;
+}
 #menu {
   min-width: 310px;
+  padding: 10px;
+}
+#menu-logo {
+  display: inline-block;
+  margin-right: 40px;
+}
+#menu-logo svg {
+  height: 2em;
+  width: auto;
+}
+#menu-list {
+  margin: 0;
+  display: inline-block;
+  vertical-align: text-top;
+}
+#menu-list li {
+  display: inline-block;
+  margin-right: 20px;
+}
+#us-copy {
+  font-size: 1.6em;
+  line-height: 1.4em;
+  max-width: 884px;
+}
+#us-copy p {
+  max-width: 884px;
+}
+.home-key-fact {
+  display: inline-block;
+  border: solid 1px #0e0e0e;
+  box-sizing: border-box;
   padding: 20px;
-  min-height: 10vh;
+  text-align: center;
+  width: 80%;
+}
+.find-out-more-solo {
+  width: 33.333333333333336%;
+  margin-left: 66.66666666666667%;
+}
+.find-out-more {
+  border: solid 1px transparent;
+}
+.find-out-more:hover {
+  border: solid 1px #ff0;
 }
 #contact {
   padding-top: 40px;
@@ -848,13 +910,13 @@ textarea {
   min-width: 320px;
 }
 label {
-  width: 70%;
+  width: 80%;
   display: block;
   text-align: left;
 }
 input,
 textarea {
-  width: 65%;
+  width: 75%;
   background-color: #fdfdfd;
   display: block;
   padding: 20px;

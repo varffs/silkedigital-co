@@ -23,7 +23,7 @@ $font-leading-basic = 1.4em
 $font-leading-header = 1.5em
 $font-tracking-basic = 0.001em
 
-$width-max-copy = 650px
+$width-max-copy = 680px
 
 $color-black-soft = rgb(14, 14, 14)
 $color-white-soft = rgb(253, 253, 253)
@@ -60,6 +60,13 @@ p
     border-bottom: 2px solid $color-yellow
     &:hover
       border-bottom-color: black
+
+blockquote
+  font-style: italic
+  font-size: 1.2em
+  line-height: $font-leading-header
+  margin: $margin-basic
+
 
 .font-bold
   font-weight: bold
@@ -100,31 +107,35 @@ html
 .container
   width: 65%
   min-width: 310px
+  max-width: 1100px
   margin: 0 auto
 
-img
+img, svg
   max-width: 100%
   height: auto
 
 video
   width: 100%
 
-//.window
-//  min-height: 100vh
-
 .yellow-background
   background-color: $color-yellow
 
+.center-spaced
+  padding-top: 20vh
+  padding-bottom: 20vh
+
 .center-text
   max-width: $width-max-copy
-  margin: 20vh auto
+  margin: 0 auto
+  box-sizing: border-box
+  padding: $margin-basic
 
 // HOME
 
   // SPLASH
 
 #splash
-  height: 90vh
+  height: 99vh
 
 #splash-logo
   svg
@@ -133,10 +144,60 @@ video
 
   // MENU
 
+#menu-holder
+  width: 100%
+  top: 0
+  z-index: 999
+  border-bottom: 2px solid $color-white-soft
+
 #menu
   min-width: 310px
+  padding: $margin-tiny
+
+#menu-logo
+  display: inline-block
+  margin-right: $margin-basic
+  svg
+    height: 2em
+    width: auto
+
+#menu-list
+  margin: 0
+  display: inline-block
+  vertical-align: text-top
+  li
+    display: inline-block
+    margin-right: $margin-small
+
+
+// US
+
+#us-copy
+  font-size: 1.6em
+  line-height: $font-leading-basic
+  max-width: ($width-max-copy * 1.3)
+  p
+    max-width: ($width-max-copy * 1.3)
+
+
+// WORK
+
+.home-key-fact
+  display: inline-block
+  border: solid 1px $color-black-soft
+  box-sizing: border-box
   padding: $margin-small
-  min-height: 10vh
+  text-align: center
+  width: 80%
+
+.find-out-more-solo
+  width: ( 100% / 3 )
+  margin-left: ( ( 100% / 3 ) * 2 )
+
+.find-out-more
+  border: solid 1px transparent
+  &:hover
+    border: solid 1px $color-yellow
 
 // CONTACT
 
@@ -156,12 +217,12 @@ label, input, textarea
   min-width: 320px
 
 label
-  width: 70%
+  width: 80%
   display: block
   text-align: left
 
 input, textarea
-  width: 65%
+  width: 75%
   background-color: $color-white-soft
   display: block
   padding: $margin-small
